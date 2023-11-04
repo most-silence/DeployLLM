@@ -2,13 +2,13 @@
 
 这一步会因为不同公司而不同因此不放上了， 贴个图
 
-![image-20231104102248266](E:/Local%20source/DeployLLM/images/image-20231104102248266-16990645713072.png)
+![image-20231104102248266](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041205993.png)
 
 # 配置开发环境
 
 - 打开JuypterLab
 
-![image-20231104102411916](E:/Local%20source/DeployLLM/images/image-20231104102411916-16990646536893.png)
+![image-20231104102411916](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041205792.png)
 
 - 创建新的ipylab，打开终端，输入以下指令进行换源
 
@@ -19,7 +19,7 @@ pip config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple
 python3 -m pip install --upgrade pip
 ```
 
-![image-20231104103421361](E:/Local%20source/DeployLLM/images/image-20231104103421361-16990652628884.png)
+![image-20231104103421361](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041206815.png)
 
 - 下载模型，修改requirements
 
@@ -62,7 +62,7 @@ demo.queue().launch(share=False, server_name="0.0.0.0", server_port=7000 )
 
 在界面右边添加端口7000，即刚才填入的server_port
 
-![image-20231104105149178](E:/Local%20source/DeployLLM/images/image-20231104105149178-16990663104445.png)
+![image-20231104105149178](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041206185.png)
 
 - 运行模型，启动gradio界面
 
@@ -99,38 +99,39 @@ Running on local URL:  http://0.0.0.0:7000
 To create a public link, set `share=True` in `launch()`.
 ```
 
-![image-20231104105901544](E:/Local%20source/DeployLLM/images/image-20231104105901544-16990667437286.png)
+![image-20231104105901544](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041206570.png)
 
 找到外部访问链接后
 
-![image-20231104110152960](E:/Local%20source/DeployLLM/images/image-20231104110152960-16990669138697.png)
+![image-20231104110152960](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041206038.png)
 
 仍然无法打开
 
-![image-20231104110210321](E:/Local%20source/DeployLLM/images/image-20231104110210321-16990669320668.png)
+![image-20231104110210321](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041206385.png)
 
-![image-20231104110224257](E:/Local%20source/DeployLLM/images/image-20231104110224257-16990669451709.png)
+![image-20231104110224257](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041206117.png)
 
 经过群友提示，应该是内存正在交换，不足以启动，重启一次即可
 
-![image-20231104111011710](E:/Local%20source/DeployLLM/images/image-20231104111011710-169906741525610.png)
+![image-20231104111011710](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041206738.png)
 
-![image-20231104111227801](E:/Local%20source/DeployLLM/images/image-20231104111227801-169906754889711.png)
+![image-20231104111227801](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041206961.png)
 
 ```shell
 streamlit run web_demo2.py
 ```
 
-![image-20231104111539848](E:/Local%20source/DeployLLM/images/image-20231104111539848-169906774072812.png)
+![image-20231104111539848](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041206641.png)
 
 打开外部链接时，仍然无法加载模型，多次重启进程，重启环境后后仍然无法打开。 
 
 初步估计是GPU被写入后显存没有释放，尝试直接运行demo2
 
 等待释放完毕
-![image-20231104115642122](E:/Local%20source/DeployLLM/images/image-20231104115642122-169907020385013.png)
+![image-20231104115642122](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041206107.png)
 
 再次运行
-![image-20231104115857282](E:/Local%20source/DeployLLM/images/image-20231104115857282-169907033918514.png)
+![image-20231104115857282](https://raw.githubusercontent.com/most-silence/picgo_image/main/image_note/202311041206261.png)
 
 未找到原因
+任务一结束
